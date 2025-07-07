@@ -14,7 +14,7 @@ import TrustedCompany from "./trusted-companies";
 export default function Campaign() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <OutImpressiveStats />
       <CoursesCategories />

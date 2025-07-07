@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Layout, FixedPlugin } from "@/components";
+import {Navbar, Layout } from "@/components";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -10,10 +10,11 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NextJS Tailwind Course Landing Page",
+  title: "ADB Creative Team SMKN 1 Adiwerna",
   description:
-    "Introducing Tailwind Course Landing Page, a versatile and engaging landing page template designed using Tailwind CSS and Material Tailwind.",
+    "Selamat datang di halaman resmi ADB Creative Team SMKN 1 Adiwerna. Kami adalah tim kreatif yang bergerak di bidang desain, multimedia, dan pengembangan digital sekolah.",
 };
+
 
 export default function RootLayout({
   children,
@@ -31,9 +32,10 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
       <body className={roboto.className}>
+          <Navbar />
         <Layout>
           {children}
-          <FixedPlugin />
+          {/* <FixedPlugin /> */}
         </Layout>
       </body>
     </html>
