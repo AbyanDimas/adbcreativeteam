@@ -132,27 +132,6 @@ export default async function Articles() {
     <section className="py-20 px-4 sm:px-8 bg-gray-50 dark:bg-gray-950">
       <div className="container mx-auto">
         {/* Header with school branding */}
-        <div className="mb-16 text-center">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-8 h-1 bg-blue-500 rounded-full"></div>
-            <Typography
-              variant="h6"
-              className="uppercase !text-blue-500 dark:!text-blue-400 font-semibold"
-            >
-              ADBCreative Team
-            </Typography>
-            <div className="w-8 h-1 bg-blue-500 rounded-full"></div>
-          </div>
-          <Typography variant="h2" color="blue-gray" className="mb-4 dark:text-white">
-            Artikel & Berita Terkini
-          </Typography>
-          <Typography
-            variant="lead"
-            className="mx-auto max-w-2xl font-normal !text-gray-500 dark:!text-gray-400"
-          >
-            Update terbaru seputar teknologi web, kegiatan sekolah, dan prestasi siswa SMKN 1 Adiwerna
-          </Typography>
-        </div>
 
         {/* Articles grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
