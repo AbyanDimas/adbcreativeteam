@@ -1,10 +1,8 @@
 {
-  "name": "nextjs-tailwind-course-landing-page",
+  "name": "Situs Resmi ADB Creative Team",
   "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "See license in https://www.creative-tim.com/license",
-  "homepage": "https://demos.creative-tim.com/nextjs-tailwind-course-landing-page",
+  "author": "ADB Creative Tim",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

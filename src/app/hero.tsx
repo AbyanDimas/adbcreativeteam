@@ -9,7 +9,7 @@ function Hero() {
       <Image
         width={1200}
         height={1200}
-        src="/image/image8.svg"
+        src="/logos/hero1.webp"
         alt="bg-img"
         className="absolute inset-0 ml-auto w-[920px] h-[780px] rounded-bl-[100px] object-cover object-center"
       />
@@ -19,51 +19,32 @@ function Hero() {
             <Typography
               variant="h1"
               color="blue-gray"
-              className="lg:text-5xl !leading-snug text-3xl lg:max-w-3xl"
+              className="lg:text-5xl !leading-snug text-3xl lg:max-w-3xl mt-5"
             >
-              Unlock the Power of the Web with Our Expert Courses
+              Kenalin, kami ADB Creative Team dari SMKN 1 Adiwerna
             </Typography>
             <Typography variant="lead" className="mb-10 mt-6 !text-gray-900">
-              Are you ready to embark on an exciting journey into the world of
-              web development? Look no further! We are your trusted partner for
-              mastering the art of web development.
+              Tempatnya anak-anak kreatif ngulik web, desain, dan banyak hal seru lainnya. Siap ikut bareng?
             </Typography>
             <div className="mb-8 flex justify-center gap-4 lg:justify-start">
-              <Button color="gray">view all courses</Button>
+              <Button color="gray">Gabung Sekarang</Button>
               <Button color="gray" variant="outlined">
-                see pricing
+                Lihat Divisi
               </Button>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 items-center justify-between gap-4 lg:justify-start">
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-pinterest.svg"
-                alt="pinterest"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-netflix.svg"
-                alt="netflix"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-coinbase.svg"
-                alt="coinbase"
-              />
-              <Image
-                width={144}
-                height={144}
-                className="w-36 grayscale opacity-60"
-                src="/logos/logo-google.svg"
-                alt="google"
-              />
-            </div>
+<div className="text-center lg:text-left mt-8">
+  <Typography variant="small" className="text-gray-600 font-medium mb-2">
+    Didukung oleh
+  </Typography>
+  <Image
+    width={144}
+    height={144}
+    className="mx-auto lg:mx-0 w-56"
+    src="/logos/adb.png" // ganti sesuai file logo kamu
+    alt="Logo SMKN 1 Adiwerna"
+  />
+</div>
+
           </Card>
         </div>
       </div>
