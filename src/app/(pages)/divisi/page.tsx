@@ -8,9 +8,10 @@ import {
   CodeBracketIcon,
   ArrowRightIcon
 } from "@heroicons/react/24/solid";
+import Link from 'next/link';
 
 // A modern and engaging card component for each division
-const DivisionCard = ({ title, description, icon, color }) => {
+const DivisionCard = ({ title, description, icon, color, href }) => {
   return (
     <div className={`
       relative bg-white rounded-xl shadow-lg overflow-hidden
@@ -39,16 +40,18 @@ const DivisionCard = ({ title, description, icon, color }) => {
       </p>
 
       {/* Call-to-Action Button */}
-      <button
-        className={`
-          mt-auto px-6 py-3 rounded-full text-white font-semibold
-          transition-all duration-300
-          ${color.replace('border-', 'bg-')} hover:${color.replace('border-', 'bg-').replace('-500', '-600')}
-          focus:outline-none focus:ring-2 focus:ring-offset-2 ${color.replace('border-', 'focus:ring-')}
-        `}
-      >
-        Lihat Anggota
-      </button>
+      <Link href={href}>
+        <button
+          className={`
+            mt-auto px-6 py-3 rounded-full text-white font-semibold
+            transition-all duration-300
+            ${color.replace('border-', 'bg-')} hover:${color.replace('border-', 'bg-').replace('-500', '-600')}
+            focus:outline-none focus:ring-2 focus:ring-offset-2 ${color.replace('border-', 'focus:ring-')}
+          `}
+        >
+          Lihat Anggota
+        </button>
+      </Link>
 
       {/* Optional: Add a subtle overlay on hover for visual feedback */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-transparent group-hover:to-gray-50/10 transition-all duration-300 pointer-events-none"></div>
@@ -64,37 +67,43 @@ const ADBCreativeTeamPage = () => {
       title: "Divisi Talent",
       description: "Bertanggung jawab untuk menjadi talent dalam berbagai konten kreatif sekolah, membawa ide-ide segar ke depan kamera.",
       icon: <UserGroupIcon />,
-      color: "border-purple-500" // Brighter, more modern purple
+      color: "border-purple-500", // Brighter, more modern purple
+      href: "/divisi/talent"
     },
     {
       title: "Divisi Desain",
       description: "Mengembangkan desain grafis yang inovatif dan menarik untuk kebutuhan promosi dan branding sekolah, dari poster hingga media sosial.",
       icon: <PaintBrushIcon />,
-      color: "border-blue-500" // Brighter blue
+      color: "border-blue-500", // Brighter blue
+      href: "/divisi/desain"
     },
     {
       title: "Divisi Talent Tiktok",
       description: "Khusus menangani produksi konten kreatif yang viral dan relevan di platform TikTok untuk memperluas jangkauan promosi sekolah.",
       icon: <FilmIcon />,
-      color: "border-pink-500" // More vibrant pink
+      color: "border-pink-500", // More vibrant pink
+      href: "/divisi/talent-tiktok"
     },
     {
       title: "Divisi Editor & Editor YouTube",
       description: "Mengedit video dan konten multimedia dengan kualitas tinggi untuk channel YouTube sekolah, memastikan setiap video menarik dan informatif.",
       icon: <VideoCameraIcon />,
-      color: "border-red-500" // Classic red for video
+      color: "border-red-500", // Classic red for video
+      href: "/divisi/editor-youtube"
     },
     {
       title: "Divisi Dokumentasi",
       description: "Mendokumentasikan berbagai kegiatan penting sekolah dalam bentuk foto dan video profesional, mengabadikan setiap momen berharga.",
       icon: <CameraIcon />,
-      color: "border-green-500" // Fresh green
+      color: "border-green-500", // Fresh green
+      href: "/divisi/dokumentasi"
     },
     {
       title: "Divisi Website",
       description: "Mengembangkan dan memelihara website sekolah serta platform digital lainnya, memastikan pengalaman online yang mulus dan informatif.",
       icon: <CodeBracketIcon />,
-      color: "border-indigo-500" // Deep indigo
+      color: "border-indigo-500", // Deep indigo
+      href: "/divisi/website"
     }
   ];
 
@@ -133,6 +142,7 @@ const ADBCreativeTeamPage = () => {
               description={division.description}
               icon={division.icon}
               color={division.color}
+              href={division.href} // Tambahkan ini
             />
           ))}
         </div>
@@ -153,7 +163,8 @@ const ADBCreativeTeamPage = () => {
         <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto mb-8 drop-shadow">
           Jadilah bagian dari tim kreatif yang dinamis dan berinovasi. Bersama, kita wujudkan ide-ide luar biasa!
         </p>
-        <button
+        <Link
+          href="/divisi/join"
           className="
             bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg
             shadow-lg hover:shadow-xl transform hover:scale-105
@@ -163,7 +174,7 @@ const ADBCreativeTeamPage = () => {
         >
           <span>Gabung Sekarang</span>
           <ArrowRightIcon className="h-5 w-5 ml-2" />
-        </button>
+        </Link>
       </section>
 
     </div>
