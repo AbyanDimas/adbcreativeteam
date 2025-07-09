@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from 'react';
 import {
   PhotoIcon,
@@ -148,7 +147,6 @@ const GalleryPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Header Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -166,14 +164,10 @@ const GalleryPage = () => {
           </div>
         </div>
         
-        {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-48 translate-x-48"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
       </div>
-
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Featured Projects */}
         <div className="mb-16">
           <div className="flex items-center justify-center mb-8">
             <div className="flex items-center space-x-2">
@@ -187,7 +181,6 @@ const GalleryPage = () => {
             {featuredProjects.map((project) => (
               <div key={project.id} className="group cursor-pointer" onClick={() => setSelectedProject(project)}>
                 <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:scale-[1.02]">
-                  {/* Featured Badge */}
                   <div className="absolute top-4 right-4 z-10">
                     <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
                       <StarIcon className="w-3 h-3" />
@@ -195,12 +188,10 @@ const GalleryPage = () => {
                     </div>
                   </div>
                   
-                  {/* Project Image */}
                   <div className="relative h-48 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 flex items-center justify-center">
                     <div className="text-6xl">{project.image}</div>
                   </div>
-                  
-                  {/* Project Content */}
+
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">
                       <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getCategoryColor(project.category)}`}>
@@ -243,10 +234,8 @@ const GalleryPage = () => {
           </div>
         </div>
 
-        {/* Search and Filter */}
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-            {/* Search */}
             <div className="relative flex-1 max-w-md">
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
@@ -257,8 +246,6 @@ const GalleryPage = () => {
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
-            
-            {/* Category Filter */}
             <div className="flex items-center space-x-2 overflow-x-auto">
               <FunnelIcon className="w-4 h-4 text-gray-500 flex-shrink-0" />
               {categories.map((category) => (
@@ -280,17 +267,14 @@ const GalleryPage = () => {
           </div>
         </div>
 
-        {/* All Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div key={project.id} className="group cursor-pointer" onClick={() => setSelectedProject(project)}>
               <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 hover:scale-[1.02]">
-                {/* Project Image */}
                 <div className="relative h-32 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
                   <div className="text-4xl">{project.image}</div>
                 </div>
-                
-                {/* Project Content */}
+              
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getCategoryColor(project.category)}`}>
@@ -328,7 +312,6 @@ const GalleryPage = () => {
           ))}
         </div>
 
-        {/* No Results */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
             <div className="text-4xl mb-4">🔍</div>
@@ -337,7 +320,6 @@ const GalleryPage = () => {
           </div>
         )}
 
-        {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white shadow-2xl">
             <div className="max-w-2xl mx-auto">
@@ -356,7 +338,6 @@ const GalleryPage = () => {
         </div>
       </div>
 
-      {/* Project Detail Modal */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
