@@ -11,6 +11,7 @@ import Events from "./events";
 import StudentsFeedback from "./students-feedback";
 import TrustedCompany from "./trusted-companies";
 import SponsorHighlightPage from "./sponsors";
+import TentengKami from "./tentangkami";
 
 export default function Campaign() {
   return (
@@ -23,6 +24,7 @@ export default function Campaign() {
       <Testimonial />
       <Events />
       <SponsorHighlightPage />
+      <TentengKami />
       <StudentsFeedback />
       <TrustedCompany />
       <Footer />
