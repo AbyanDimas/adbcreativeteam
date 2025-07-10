@@ -181,7 +181,7 @@ export default function TiktokPage() {
 
                     <div className="mt-8">
                       <a
-                        href={`/tiktok/${member.attributes.seoURL || member.id}`}
+                        href={`/divisi/tiktok/${member.attributes.seoURL || member.id}`}
                         className="inline-flex items-center text-blue-500 hover:text-blue-700 transition-colors"
                       >
                         Lihat detail
@@ -243,7 +243,7 @@ export default function TiktokPage() {
                   </div>
                   
                   <a
-                    href={`/tiktok/${member.attributes.seoURL || member.id}`}
+                    href={`/divisi/tiktok/${member.attributes.seoURL || member.id}`}
                     className="inline-flex items-center mt-4 text-sm text-blue-500 hover:text-blue-700"
                   >
                     Lihat detail

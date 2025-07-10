@@ -181,7 +181,7 @@ export default function DesainPage() {
 
                     <div className="mt-8">
                       <a
-                        href={`/desain/${member.attributes.seoURL || member.id}`}
+                        href={`/divisi/desain/${member.attributes.seoURL || member.id}`}
                         className="inline-flex items-center text-blue-500 hover:text-blue-700 transition-colors"
                       >
                         Lihat detail
@@ -243,7 +243,7 @@ export default function DesainPage() {
                   </div>
                   
                   <a
-                    href={`/desain/${member.attributes.seoURL || member.id}`}
+                    href={`/divisi/desain/${member.attributes.seoURL || member.id}`}
                     className="inline-flex items-center mt-4 text-sm text-blue-500 hover:text-blue-700"
                   >
                     Lihat detail

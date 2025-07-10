@@ -181,7 +181,7 @@ export default function DokumentasiPage() {
 
                     <div className="mt-8">
                       <a
-                        href={`/dokumentasi/${member.attributes.seoURL || member.id}`}
+                        href={`/divisi/dokumentasi/${member.attributes.seoURL || member.id}`}
                         className="inline-flex items-center text-blue-500 hover:text-blue-700 transition-colors"
                       >
                         Lihat detail
@@ -243,7 +243,7 @@ export default function DokumentasiPage() {
                   </div>
                   
                   <a
-                    href={`/dokumentasi/${member.attributes.seoURL || member.id}`}
+                    href={`/divisi/dokumentasi/${member.attributes.seoURL || member.id}`}
                     className="inline-flex items-center mt-4 text-sm text-blue-500 hover:text-blue-700"
                   >
                     Lihat detail
