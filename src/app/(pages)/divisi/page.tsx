@@ -13,6 +13,7 @@ import Link from 'next/link';
 // A modern and engaging card component for each division
 const DivisionCard = ({ title, description, icon, color, href }) => {
   return (
+    <Link href={href}>
     <div className={`
       relative bg-white rounded-xl shadow-lg overflow-hidden
       transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl
@@ -25,7 +26,7 @@ const DivisionCard = ({ title, description, icon, color, href }) => {
         bg-opacity-15
         ${color.replace('border-', 'text-').replace('-600', '-500')}
         ${color.replace('border-', 'bg-').replace('-600', '-100')}
-      `}>
+        `}>
         {React.cloneElement(icon, { className: `h-8 w-8 ${color.replace('border-', 'text-')}` })}
       </div>
 
@@ -40,7 +41,6 @@ const DivisionCard = ({ title, description, icon, color, href }) => {
       </p>
 
       {/* Call-to-Action Button */}
-      <Link href={href}>
         <button
           className={`
             mt-auto px-6 py-3 rounded-full text-white font-semibold
@@ -51,11 +51,11 @@ const DivisionCard = ({ title, description, icon, color, href }) => {
         >
           Lihat Anggota
         </button>
-      </Link>
 
       {/* Optional: Add a subtle overlay on hover for visual feedback */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent to-transparent group-hover:from-transparent group-hover:to-gray-50/10 transition-all duration-300 pointer-events-none"></div>
     </div>
+      </Link>
   );
 };
 

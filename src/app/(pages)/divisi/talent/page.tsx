@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Typography, Card, CardBody, Avatar, Tabs, TabsHeader, Tab, Button, Input } from "@material-tailwind/react";
+import { Typography, Card, CardBody, Button, Input } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { ArrowLeftIcon, Squares2X2Icon, ListBulletIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton } from "react-share";
@@ -51,7 +51,7 @@ export default function TalentPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:1337/api/divisis?populate=*");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/divisis?populate=*`);
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
