@@ -44,10 +44,10 @@ async function getArticleBySlug(slug: string) {
 }
 
 async function getRelatedArticles(currentArticleId: number, tag?: string) {
-  const filters = tag 
+  const filters = tag
     ? `filters[Tag][$eq]=${tag}&filters[id][$ne]=${currentArticleId}`
     : `filters[id][$ne]=${currentArticleId}`;
-  
+
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/artikels?${filters}&populate=*&sort[0]=createdAt:desc&pagination[limit]=3`
   );
@@ -68,10 +68,10 @@ function formatDate(dateString: string) {
 
 function ArticleCardSmall({ article }: { article: Article }) {
   const { attributes } = article;
-  const imageUrl = attributes.Gambar?.data?.attributes?.formats?.medium?.url || 
-                   attributes.Gambar?.data?.attributes?.url || 
-                   "/image/blogs/blog-1.svg";
-  
+  const imageUrl = attributes.Gambar?.data?.attributes?.formats?.medium?.url ||
+    attributes.Gambar?.data?.attributes?.url ||
+    "/image/blogs/blog-1.svg";
+
   return (
     <Card className="overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm dark:shadow-none dark:bg-gray-900 group hover:shadow-lg transition-all duration-300 h-full flex flex-col">
       <Link href={`/artikel/${attributes.seoURL}`} className="flex-grow flex flex-col">
@@ -105,9 +105,9 @@ function ArticleCardSmall({ article }: { article: Article }) {
           <Typography className="font-normal !text-gray-500 dark:!text-gray-300 line-clamp-2 text-sm mb-2">
             {attributes.Deskripsi}
           </Typography>
-          <Button 
-            variant="text" 
-            color="gray" 
+          <Button
+            variant="text"
+            color="gray"
             size="sm"
             className="flex items-center gap-1 group-hover:text-blue-500 dark:group-hover:text-blue-400 dark:text-gray-300 transition-colors p-0 mt-auto"
           >
@@ -171,9 +171,9 @@ export default async function ArticleDetail({ params }: PageProps) {
   const relatedArticles: Article[] = relatedArticlesData.data;
 
   const { attributes } = article;
-  const imageUrl = attributes.Gambar?.data?.attributes?.formats?.large?.url || 
-                   attributes.Gambar?.data?.attributes?.url || 
-                   "/image/blogs/blog-1.svg";
+  const imageUrl = attributes.Gambar?.data?.attributes?.formats?.large?.url ||
+    attributes.Gambar?.data?.attributes?.url ||
+    "/image/blogs/blog-1.svg";
 
   return (
     <section className="py-12 px-4 sm:px-8 bg-gray-50 dark:bg-gray-950">
@@ -252,18 +252,18 @@ export default async function ArticleDetail({ params }: PageProps) {
           </div>
         )}
 
-        <div className="text-center">
-          <Button 
-            variant="gradient" 
-            color="blue" 
-            size="lg"
-            className="flex items-center gap-2 mx-auto"
-            as={Link}
-            href="/artikel"
-          >
-            Lihat Semua Artikel
-          </Button>
-        </div>
+        <Link href={'/artikel'}>
+          <div className="text-center">
+            <Button
+              variant="gradient"
+              color="blue"
+              size="lg"
+              className="flex items-center gap-2 mx-auto"
+            >
+              Lihat Semua Artikel
+            </Button>
+          </div>
+        </Link>
       </div>
     </section>
   );

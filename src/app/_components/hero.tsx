@@ -3,16 +3,17 @@
 import Image from "next/image";
 import { Button, Typography } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center px-4 sm:px-8 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section className="relative w-full min-h-screen flex items-center px-4 sm:px-8 overflow-hidden">
       {/* Elemen Background Dekoratif */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 bg-blue-400 rounded-full filter blur-3xl opacity-20 mix-blend-multiply animate-blob animation-delay-2000"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400 rounded-full filter blur-3xl opacity-20 mix-blend-multiply animate-blob"></div>
         <div className="absolute bottom-0 left-1/2 w-72 h-72 bg-purple-400 rounded-full filter blur-3xl opacity-20 mix-blend-multiply animate-blob animation-delay-4000"></div>
-      </div>
+      </div> */}
 
       {/* Gambar Tim dengan Efek */}
       <motion.div 
@@ -37,8 +38,8 @@ function Hero() {
       </motion.div>
 
       {/* Konten Utama */}
-      <div className="container mx-auto relative z-20 py-28">
-        <div className="max-w-2xl">
+      <div className="container mx-auto relative py-8">
+        <div className="max-w-2xl rounded-lg border border-gray-400 bg-gray-50 pt-10 px-10 py-10 mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,14 +90,18 @@ function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
+            <Link href={"/divisi"}> 
             <div className="bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white">
               <div className="text-3xl font-bold text-blue-600">50+</div>
               <div className="text-gray-700">Anggota Aktif</div>
             </div>
+            </Link>
+            <Link href={"/divisi"}>
             <div className="bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white">
               <div className="text-3xl font-bold text-indigo-600">5+</div>
               <div className="text-gray-700">Bidang Keahlian</div>
             </div>
+            </Link>
             <div className="bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white hidden md:block">
               <div className="text-3xl font-bold text-purple-600">100%</div>
               <div className="text-gray-700">Kreativitas</div>
@@ -128,11 +133,6 @@ function Hero() {
           </motion.div>
         </div>
       </div>
-
-      {/* Elemen Dekoratif */}
-      <div className="absolute bottom-10 left-10 w-16 h-16 rounded-full bg-indigo-400/20 animate-float"></div>
-      <div className="absolute top-1/4 right-1/4 w-8 h-8 rounded-full bg-blue-400/20 animate-float animation-delay-2000"></div>
-      <div className="absolute bottom-1/3 right-20 w-12 h-12 rounded-full bg-purple-400/20 animate-float animation-delay-4000"></div>
     </section>
   );
 }
